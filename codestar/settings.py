@@ -29,7 +29,9 @@ SECRET_KEY = 'django-insecure-ru%zs68jq^vt7l+wl69g^u7vt83da(1p_g!2jvvx=@_0)jnn&5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-raypt808-djangoblog-h0mcvrfuu5d.ws-eu116.gitpod.io','.herokuapp.com']
+ALLOWED_HOSTS = ['8000-raypt808-djangoblog-u462jztifvs.ws-eu116.gitpod.io' ,'.herokuapp.com',['*']
+]
+
 
 
 # Application definition
@@ -91,6 +93,11 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
