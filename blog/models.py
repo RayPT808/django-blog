@@ -22,6 +22,7 @@ class Post(models.Model):
 
         def __str__(self):
             return f"{self.title} | written by {self.author}"
+        
 
 class Comment(models.Model):
     post = models.ForeignKey(
@@ -37,4 +38,9 @@ class Comment(models.Model):
 
         def __str__(self):
             return f"Comment {self.body} by {self.author}"
+        
+
+class Event(models.Model):
+    name = models.CharField(max_length=200)
+    date = models.DateField()       
 

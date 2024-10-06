@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import Post
+from django.views.generic import ListView
+from .models import Event
 
 # Create your views here.
 
@@ -11,7 +13,14 @@ class PostList(generic.ListView):
 
 
 
-def post_detail(request, slug):
+class EventsList(ListView):
+    model = Event
+    template_name = 'blog/home.html'
+
+
+
+
+def event_detail(request, slug):
     """
     Display an individual :model:`blog.Post`.
 
@@ -32,4 +41,9 @@ def post_detail(request, slug):
         request,
         "blog/post_detail.html",
         {"post": post},
-    )  
+    )
+
+
+def post_detail(request, slug):
+    
+    pass
